@@ -54,7 +54,7 @@ public class ApplyDAO {
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getApply_sort());
@@ -78,7 +78,7 @@ public class ApplyDAO {
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getApply_index());
@@ -89,7 +89,7 @@ public class ApplyDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}
-	public ApplyVO getNotice(ApplyVO vo)
+	public ApplyVO getApply(ApplyVO vo)
 	{
 		String sql = "select * from apply where apply_index=?";
 		System.out.println("==>JDBC로 getBoard() :"+sql);
@@ -97,7 +97,7 @@ public class ApplyDAO {
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getApply_index());
@@ -125,16 +125,16 @@ public class ApplyDAO {
 		}
 		return board;
 	}
-	public List<ApplyVO> getNoticeList(ApplyVO vo)
+	public List<ApplyVO> getApplyList(ApplyVO vo)
 	{
-		String sql = "select * from board order by seq desc";
+		String sql = "select * from apply order by apply_date desc";
 		System.out.println("==>JDBC로 getBoardList(): "+sql);		
 		List<ApplyVO> boardList = new ArrayList<ApplyVO>();
 		
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
