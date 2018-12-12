@@ -3,41 +3,41 @@ package blood119.apply.vo;
 import java.sql.Date;
 
 public class ApplyVO {
-	private int index;
-	private String sort;
-	private String writer;
-	private Date date;
+	private int apply_index;
+	private String apply_sort;
+	private String apply_id;
+	private Date apply_date;
 	private String location;
-	private String name;
-	private String type;
-	private String bloodtype;
-	private String gender;
-	private int age;
+	private String ani_name;
+	private String ani_type;
+	private String ani_bloodtype;
+	private String ani_gender;
+	private int ani_age;
 	private String result;
 	
-	public int getIndex() {
-		return index;
+	public int getApply_index() {
+		return apply_index;
 	}
-	public void setIndex(int index) {
-		this.index = index;
+	public void setApply_index(int apply_index) {
+		this.apply_index = apply_index;
 	}
-	public String getSort() {
-		return sort;
+	public String getApply_sort() {
+		return apply_sort;
 	}
-	public void setSort(String sort) {
-		this.sort = sort;
+	public void setApply_sort(String apply_sort) {
+		this.apply_sort = apply_sort;
 	}
-	public String getWriter() {
-		return writer;
+	public String getApply_id() {
+		return apply_id;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setApply_id(String apply_id) {
+		this.apply_id = apply_id;
 	}
-	public Date getDate() {
-		return date;
+	public Date getApply_date() {
+		return apply_date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setApply_date(Date apply_date) {
+		this.apply_date = apply_date;
 	}
 	public String getLocation() {
 		return location;
@@ -45,35 +45,35 @@ public class ApplyVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getName() {
-		return name;
+	public String getAni_name() {
+		return ani_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAni_name(String ani_name) {
+		this.ani_name = ani_name;
 	}
-	public String getType() {
-		return type;
+	public String getAni_type() {
+		return ani_type;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setAni_type(String ani_type) {
+		this.ani_type = ani_type;
 	}
-	public String getBloodtype() {
-		return bloodtype;
+	public String getAni_bloodtype() {
+		return ani_bloodtype;
 	}
-	public void setBloodtype(String bloodtype) {
-		this.bloodtype = bloodtype;
+	public void setAni_bloodtype(String ani_bloodtype) {
+		this.ani_bloodtype = ani_bloodtype;
 	}
-	public String getGender() {
-		return gender;
+	public String getAni_gender() {
+		return ani_gender;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setAni_gender(String ani_gender) {
+		this.ani_gender = ani_gender;
 	}
-	public int getAge() {
-		return age;
+	public int getAni_age() {
+		return ani_age;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setAni_age(int ani_age) {
+		this.ani_age = ani_age;
 	}
 	public String getResult() {
 		return result;
