@@ -3,7 +3,9 @@ package blood119.user.dao;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -46,5 +48,28 @@ public class UserDAO {
 		pstmt.close();
 		conn.close();
 		
+	}
+	
+	public UserVO getUser(UserVO svo) throws SQLException {
+		UserVO vo = null;
+		ResultSet rs=null;
+		Statement stmt=null;
+		Connection conn=null;
+		String id=svo.getId();
+		String password=svo.getPassword();
+		String query ="select * from Member where MEMBER_ID='"+id+"'and MEMBER_PW='"+password+"'";
+		conn = getConnection();
+		stmt = conn.createStatement();
+		 rs=stmt.executeQuery(query);
+		 if(rs.next()) {
+			 vo=new UserVO();
+			 vo.setId(rs.getString("MEMBER_ID"));
+			 vo.setPassword(rs.getString("MEMBER_PW"));
+			 vo.setType(rs.getString("MEMBER_TYPE"));
+			 vo.setName(rs.getString("MEMBER_NAME"));
+			 vo.setPhone(rs.getInt("MEMBER_PH"));
+		 }
+	
+	return vo;
 	}
 }

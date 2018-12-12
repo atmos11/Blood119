@@ -28,7 +28,7 @@
        </p>
        <br>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn btn-info">Home으로 돌아가기</a>
+          <a href="index.jsp" class="btn btn-lg btn btn-info">Home으로 돌아가기</a>
         </p>
         
     </div>
