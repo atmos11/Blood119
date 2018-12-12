@@ -12,7 +12,7 @@ Context envContext  = (Context)initContext.lookup("java:/comp/env");
 DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
 Connection conn = ds.getConnection();
 
-PreparedStatement pstmt = conn.prepareStatement("select sysdate from dual");
+PreparedStatement pstmt = conn.prepareStatement("select MEMBER_ID from member");
 ResultSet rs = pstmt.executeQuery();
 
 while(rs.next())
