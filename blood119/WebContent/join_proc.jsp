@@ -31,7 +31,7 @@ if(password.equals(password_check)) {
 	
 		}
 	catch(SQLException e){System.out.println(e);
-	 out.println("<script>alert('이미 가입되어있는 학번입니다.아닐경우 개발자에게 문의주세요');location.href='join.jsp';</script>");
+	 out.println("<script>alert('이미 가입되어있는 ID입니다.아닐경우 개발자에게 문의주세요');location.href='join.jsp';</script>");
 	}
 }
 else {
