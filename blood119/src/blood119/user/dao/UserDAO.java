@@ -57,7 +57,7 @@ public class UserDAO {
 		try {
 			initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			ds = (DataSource)envContext.lookup("jdbc/myoracle");
+			ds = (DataSource)envContext.lookup("jdbc/board");
 			conn = ds.getConnection();
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
