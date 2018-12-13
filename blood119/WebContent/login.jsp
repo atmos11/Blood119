@@ -20,7 +20,7 @@
       <img class="mb-4" src="./resource/img/LOGO.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">로그인해주세요</h1>
       <label for="inputEmail" class="sr-only">ID</label>
-      <input type="text"placeholder="학번" class="form-control" required autofocus name="id">
+      <input type="text"placeholder="아이디" class="form-control" required autofocus name="id">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호" required name="pw">
       <div class="checkbox mb-3">
