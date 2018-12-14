@@ -139,4 +139,27 @@ public class NoticeDAO {
 		}
 		return boardList;
 	}
+	
+	public void updatecnt(NoticeVO vo) {
+		String sql="update notice set NOTICE_HITS=? where NOTICE_INDEX =?";
+		System.out.println(vo.getNotice_index());
+		int seq=vo.getNotice_index();
+		int cnt=vo.getNotice_hits();
+		cnt++;
+		try {
+			Context initContext = new InitialContext();
+			Context envContext  = (Context)initContext.lookup("java:/comp/env");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1,cnt);
+			pstmt.setInt(2,seq);
+			pstmt.executeUpdate();
+			rs = pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

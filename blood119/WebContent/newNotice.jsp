@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <input type="submit" name="btnSubmit" class="btnContact" value="등록" />
                         </div>
-                        
+
 					</div>
                 </div>
             </form>

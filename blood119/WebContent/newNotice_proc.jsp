@@ -6,7 +6,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String title=request.getParameter("title");
-	String writer=request.getParameter("writer");
+	String writer=(String)session.getAttribute("id");
 	String content=request.getParameter("contents");
 	
 	NoticeVO vo = new NoticeVO();

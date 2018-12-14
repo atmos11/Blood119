@@ -2,12 +2,14 @@
 <%@ page import="blood119.notice.vo.NoticeVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
+<%
 	String notice_index = request.getParameter("notice_index");
 	NoticeVO vo = new NoticeVO();
 	vo.setNotice_index(Integer.parseInt(notice_index));
 	NoticeDAO noticeDao = new NoticeDAO();
 	NoticeVO notice = noticeDao.getNotice(vo);
+	noticeDao.updatecnt(notice);
+	notice= noticeDao.getNotice(vo);
 %>
 <!DOCTYPE html>
 <html>
