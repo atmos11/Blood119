@@ -5,32 +5,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>공지사항 작성 페이지</title>
+<%@include file="./common.jsp"%>
+	  <link href="./resource/css/product.css" rel="stylesheet">
+	<script src="./resource/js/boostrap.min.js"></script>
+	<script src="./resource/js/jquery-1.12.3.js"></script>
+	<script src="./resource/js/script.js"></script>
 </head>
 <body>
+    <div class="container">
+<%@include file="./header.jsp" %>
 <div align="center">
-<h2>새 공지사항</h2>
+<h2>글 상세보기</h2>
 <hr>
 <form action="newNotice_proc.jsp" method="post">
-<table border="1" cellpadding="0" cellspacing="0">
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th scope="row">제목</th>
+      <td><input name="title" type="text" /></td>
+
+    </tr>
+    <tr>
+      <th scope="row">작성자</th>
+      <td><%=session.getAttribute("id")%></td>
+    </tr>
+    <tr>
+      <th scope="row">내용</th>
+      <td><textarea name="contents" class="form-control" cols="40" rows="10"></textarea></td>
+
+    </tr>
+   
 	<tr>
-		<td bgcolor="orange" width="70">제목</td>
-		<td align="left"><input name="title" type="text" /></td>
+
+		<td colspan="2" align="center"><input type="submit" value="추가"/></td>	
 	</tr>
-	<tr>
-		<td bgcolor="orange">작성자</td>
-		<td align="left"><input name="writer" type="text" /></td>
-	</tr>
-	<tr>
-		<td bgcolor="orange">내용</td>
-		<td align="left"><textarea name="contents" cols="40" rows="10"></textarea></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><input type="submit" value="등록"/></td>
-	</tr>
+  </tbody>
 </table>
+
 </form>
-<hr>
-<a href="getNoticeList.jsp">Back</a>
 </div>
 </body>
 </html>
