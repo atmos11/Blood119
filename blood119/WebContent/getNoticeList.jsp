@@ -72,13 +72,11 @@
 						</tr>
 						<% } %>
                     </tbody>
-<<<<<<< HEAD
+
                 </table> 
                 <br>
 				<a href="newNotice.jsp">등록</a>  
-=======
                 </table>   
->>>>>>> refs/remotes/origin/master
 		</div>
 	</div>
 </div>
