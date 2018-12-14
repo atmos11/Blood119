@@ -9,36 +9,64 @@
 	NoticeDAO noticeDao = new NoticeDAO();
 	NoticeVO notice = noticeDao.getNotice(vo);
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>공지사항 수정 페이지</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./resource/img/favicon.ico">
+
+    <title>공지사항 수정 페이지</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./resource/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./resource/resource/css/pricing.css" rel="stylesheet">
+	 <link href="./resource/css/navbar.css" rel="stylesheet">
+	  <link href="./resource/css/blog.css" rel="stylesheet">
+	<script src="./resource/js/script.js"></script>
+		  <link href="./resource/css/formcss.css" rel="stylesheet">
 </head>
 <body>
-<div align="center">
-<h2>공지사항 수정</h2>
-<hr>
-<form action="updateNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
-<table border="1" cellpadding="0" cellspacing="0">
-	<tr>
-		<td bgcolor="orange" width="70">제목</td>
-		<td align="left"><input name="title" type="text" value=<%= notice.getTitle() %> /></td>	</tr>
-	<tr>
-		<td bgcolor="orange">작성자</td>
-		<td align="left"><%=notice.getWriter()%></td>
-	</tr>
-	<tr>
-		<td bgcolor="orange">내용</td>
-		<td align="left"><textarea name="contents" cols="40" rows="10" value=<%= notice.getContents() %>></textarea></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><input type="submit" value="수정"/></td>
-	</tr>
-</table>
-</form>
-<hr>
-<a href="getNoticeList.jsp">Back</a>
+<div class="container contact-form">
+            <div class="contact-image">
+                <img  src="./resource/img/LOGO.png" alt="rocket_contact"/>
+            </div>
+            <form action="updateNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
+                <h3>공지사항 수정</h3>
+               <div class="row">
+               			<div class="col-md-6">
+                        <div class="form-group">
+                            <%=notice.getNotice_date()%>
+                        </div>
+						</div>
+						<div class="col-md-6">
+                        <div class="form-group">
+                            <%=notice.getWriter()%>
+                        </div>
+						</div>
+						<div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" value="<%= notice.getTitle() %>" required/>
+
+                        </div>
+						</div>
+						<div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="contents" cols="40" rows="10" class="form-control" required><%= notice.getContents() %></textarea>
+                        </div>
+						</div>
+						<div class="col-md-6">
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="수정" />
+                        </div>
+                        
+					</div>
+                </div>
+            </form>
 </div>
 </body>
 </html>
