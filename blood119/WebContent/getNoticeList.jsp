@@ -75,7 +75,12 @@
 
                 </table> 
                 <br>
+                <%if(id==null){ %>
+                <a href="#" onclick="edit();">등록</a>
+                <%}else{
+            	   %> 
 				<a href="newNotice.jsp">등록</a>  
+				 <%} %>
                 </table>   
 		</div>
 	</div>
@@ -83,3 +88,7 @@
 
 </body>
 </html>
+<script>
+function edit(){
+alert('로그인부터 해주세요');
+}</script>

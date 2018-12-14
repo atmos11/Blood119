@@ -41,7 +41,12 @@
             <h2>수혈/헌혈신청</h2>
              <br>
             <p>수혈을 윈하시거나 헌혈을 원하실때 간단한 form만 작성하시면 신청가능합니다.</p>
-            <p><a class="btn btn-secondary" href="applyinsert.jsp" role="button">View details &raquo;</a></p>
+            <p><%if(id==null){ %>
+             <a class="btn btn-secondary" onclick="edit();" href="#" role="button">View details &raquo;</a>
+              <%}else{
+            	   %> 
+            <a class="btn btn-secondary" href="applyinsert.jsp" role="button">View details &raquo;</a>
+            <%} %></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" style="text-align:center">
            <img class="rounded-circle"  src="./resource/img/notice.png" alt="Generic placeholder image" width="140" height="140" style="background-color:#BBB">
@@ -64,3 +69,8 @@
      
 </body>
 </html>
+
+<script>
+function edit(){
+alert('로그인부터 해주세요');
+}</script>
