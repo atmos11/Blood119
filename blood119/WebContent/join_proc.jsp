@@ -27,6 +27,7 @@ UserDAO dao = new UserDAO();
 if(password.equals(password_check)) {
 	try{
 		dao.registerUser(vo);
+		session.setAttribute("value","회원가입");
 		response.sendRedirect("joinsuccess.jsp");
 	
 		}
