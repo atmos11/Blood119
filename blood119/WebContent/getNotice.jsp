@@ -2,7 +2,7 @@
 <%@ page import="blood119.notice.vo.NoticeVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
+<% 
 	String notice_index = request.getParameter("notice_index");
 	NoticeVO vo = new NoticeVO();
 	vo.setNotice_index(Integer.parseInt(notice_index));
@@ -11,19 +11,12 @@
 	noticeDao.updatecnt(notice);
 	notice= noticeDao.getNotice(vo);
 %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="./resource/img/favicon.ico">
-
-    <title>공지사항 게시물 페이지</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="./resource/css/bootstrap.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>공지 게시글 보기</title>
+ <link href="./resource/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="./resource/resource/css/pricing.css" rel="stylesheet">
@@ -37,55 +30,60 @@
             <div class="contact-image">
                 <img  src="./resource/img/LOGO.png" alt="rocket_contact"/>
             </div>
-				<form action="updateNotice.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
-                <h3>공지사항 상세보기</h3>
-               	<table class="table table-bordered">
-				  <tbody>
-				    <tr>
-				      <th scope="row">제목</th>
-				      <td><input name="title" type="text" value=<%= notice.getTitle() %> /></td>
-				
-				    </tr>
-				    <tr>
-				      <th scope="row">작성자</th>
-				      <td><%=notice.getWriter()%></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">내용</th>
-				      <td><textarea name="contents" class="form-control" cols="40" rows="10">
-						<%=notice.getContents() %></textarea></td>
-				
-				    </tr>
-				        <tr>
-				      <th scope="row">등록일</th>
-				      <td><%=notice.getNotice_date()%></td>
-				    </tr>
-				    <tr>
-						<td>조회수</td>
-						<td align="left"><%=notice.getNotice_hits()%></td>
-					</tr>
-					<tr>
-						<%String Id= (String)session.getAttribute("id");
-				            if(Id==null){
-				            	Id="member";
-				            }
-				            	else if(Id.equals(notice.getWriter())){%>
-						<td colspan="2" align="center"><input type="submit" name="btnSubmit" class="btnContact" value="수정" />
-						<form action="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
-            
+<form action="updateNotice.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
+ <h3>공지사항 조회</h3>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th scope="row">제목</th>
+      <td><%=notice.getTitle() %></td>
+
+    </tr>
+    <tr>
+      <th scope="row">작성자</th>
+      <td><%=notice.getWriter()%></td>
+    </tr>
+    <tr>
+      <th scope="row">내용</th>
+      <td><textarea name="contents" class="form-control" cols="40" rows="10" readonly>
+		<%=notice.getContents() %></textarea></td>
+
+    </tr>
+        <tr>
+      <th scope="row">등록일</th>
+      <td><%=notice.getNotice_date()%></td>
+    </tr>
+    <tr>
+		<td>조회수</td>
+		<td align="left"><%=notice.getNotice_hits()%></td>
+	</tr>
+	<tr>
+		<%String Id= (String)session.getAttribute("id");
+            if(Id==null){
+            	Id="member";
+            }
+            	else if(Id.equals(notice.getWriter())){%>
+            	<td colspan="2" align="center">
+            	<div class="row">
+            	<div class="col-md-6">
+            	<input type="submit" name="btnSubmit" class="btnContact" value="수정" /></div>
+            	<div class="col-md-6">
+		</div></div><br></td>
+			
+		<%} %>
+	</tr>
+  </tbody>
+</table>
+
+</form>
+<form action="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
+            	
                         <div class="form-group">
                             <input type="submit" name="btnSubmit" class="btnContact" value="삭제" />
                         </div>
-                        
-				</div>
-            	</form></td>	
-						
-						<%} %>
-					</tr>
-				  </tbody>
-				</table>
+                      
+				
             	</form>
-            	
 </div>
 </body>
 </html>

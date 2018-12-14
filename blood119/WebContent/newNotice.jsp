@@ -29,29 +29,30 @@
             <form action="newNotice_proc.jsp" method="post">
                 <h3>새 공지사항 작성</h3>
                <div class="row">
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="제목" value="" required/>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="writer" class="form-control" placeholder="작성자" value="" required/>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <textarea name="contents" cols="40" rows="10" class="form-control" value="" required></textarea>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="등록" />
-                        </div>
-
-					</div>
-                </div>
-            </form>
+						<table class="table table-bordered">
+						  <tbody>
+						    <tr>
+						      <th scope="row">제목</th>
+						      <td><input class="form-control" name="title" type="text" /></td>
+						
+						    </tr>
+						    <tr>
+						      <th scope="row">작성자</th>
+						      <td><%=session.getAttribute("id")%></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">내용</th>
+						      <td><textarea name="contents" class="form-control" cols="40" rows="10"></textarea></td>
+						
+						    </tr>
+						   
+							<tr>
+						
+								<td colspan="2" align="center"><input type="submit" name="btnSubmit" class="btnContact" value="추가" /></td>	
+							</tr>
+						  </tbody>
+						</table>
+						            </form>
 </div>
 </body>
 </html>
