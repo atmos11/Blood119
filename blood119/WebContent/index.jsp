@@ -47,7 +47,7 @@
             <p><a class="btn btn-secondary" href="applyinsert.jsp" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" style="text-align:center">
-           <img class="rounded-circle"  src="./resource/img/LOGO.png" alt="Generic placeholder image" width="140" height="140" style="background-color:#BBB">
+           <img class="rounded-circle"  src="./resource/img/notice.png" alt="Generic placeholder image" width="140" height="140" style="background-color:#BBB">
             <h2> </h2>
             <h2>공지사항</h2>
             <br>

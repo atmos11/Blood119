@@ -39,42 +39,53 @@
             </div>
 				<form action="updateNotice.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
                 <h3>공지사항 상세보기</h3>
-               	<div class="row">
-               			<div class="col-md-6">
-                        <div class="form-group">
-                            <%=notice.getNotice_date()%>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <%=notice.getWriter()%>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <%=notice.getTitle() %>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <%=notice.getContents() %>
-                        </div>
-						</div>
-						<div class="col-md-6">
-                        <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="수정" />
-                        </div>
-                        </div>
-				</div>
-            	</form>
-            	<form action="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
-            	<div class="col-md-6">
+               	<table class="table table-bordered">
+				  <tbody>
+				    <tr>
+				      <th scope="row">제목</th>
+				      <td><input name="title" type="text" value=<%= notice.getTitle() %> /></td>
+				
+				    </tr>
+				    <tr>
+				      <th scope="row">작성자</th>
+				      <td><%=notice.getWriter()%></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">내용</th>
+				      <td><textarea name="contents" class="form-control" cols="40" rows="10">
+						<%=notice.getContents() %></textarea></td>
+				
+				    </tr>
+				        <tr>
+				      <th scope="row">등록일</th>
+				      <td><%=notice.getNotice_date()%></td>
+				    </tr>
+				    <tr>
+						<td>조회수</td>
+						<td align="left"><%=notice.getNotice_hits()%></td>
+					</tr>
+					<tr>
+						<%String Id= (String)session.getAttribute("id");
+				            if(Id==null){
+				            	Id="member";
+				            }
+				            	else if(Id.equals(notice.getWriter())){%>
+						<td colspan="2" align="center"><input type="submit" name="btnSubmit" class="btnContact" value="수정" />
+						<form action="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
+            
                         <div class="form-group">
                             <input type="submit" name="btnSubmit" class="btnContact" value="삭제" />
                         </div>
-                        </div>
+                        
 				</div>
+            	</form></td>	
+						
+						<%} %>
+					</tr>
+				  </tbody>
+				</table>
             	</form>
+            	
 </div>
 </body>
 </html>
