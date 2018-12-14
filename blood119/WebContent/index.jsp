@@ -11,31 +11,7 @@
 </head>
 <body>
     <div class="container">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-1 col-md-4 pt-1">
-            <a class="text-muted" href="#"></a>
-          </div>
-		  	  <div class="col-10 col-md-4 text-center" style="text-align:center;">
-	
-   </div> 
-
-            <div class="col-1 col-md-4 d-flex justify-content-end align-items-center">  
-            <%String id= (String)session.getAttribute("id");
-            if(id==null){ %>
-                <a class="btn btn-sm btn-outline-secondary" href="login.jsp"  style="margin:30px;">Sign in</a>  
-               <%}else{
-            	   %>  
-            	    <a class="btn btn-sm btn-outline-secondary" href="logoutProc.jsp"  style="margin:30px;">Logout</a>  
-            	    <%} %>
-          </div>
-        </div>
- <header class=" py-3">
-           <div class="p-3 p-md-5 ">
-        <div class="col-12 px-0">
-          <img src="./resource/img/Big_Logo.png" class="rounded mx-auto d-block" style="width:30%;height:auto;">
-        </div>
-      </div>
-      </header>
+<%@include file="./header.jsp" %>
      
         <div class="row" >
           <div class="col-lg-4" style="text-align:center">
@@ -47,7 +23,7 @@
             <p><a class="btn btn-secondary" href="applyinsert.jsp" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" style="text-align:center">
-           <img class="rounded-circle"  src="./resource/img/LOGO.png" alt="Generic placeholder image" width="140" height="140" style="background-color:#BBB">
+           <img class="rounded-circle"  src="./resource/img/notice.png" alt="Generic placeholder image" width="140" height="140" style="background-color:#BBB">
             <h2> </h2>
             <h2>공지사항</h2>
             <br>
