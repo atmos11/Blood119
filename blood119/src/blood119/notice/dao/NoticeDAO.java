@@ -19,7 +19,7 @@ public class NoticeDAO {
 	private ResultSet rs = null;
 	
 	public void insertNotice(NoticeVO vo) {
-		String sql = "insert into notice(title, writer, contents) values(?,?,?)";
+		String sql = "insert into notice(notice_index,title, writer, contents) values(n_index.nextval,?,?,?)";
 		System.out.println("==> JDBC로 insertNotice() :"+sql);
 		try {
 			Context initContext = new InitialContext();
@@ -30,6 +30,7 @@ public class NoticeDAO {
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getWriter());
 			pstmt.setString(3, vo.getContents());
+			
 			rs = pstmt.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,7 +41,7 @@ public class NoticeDAO {
 	
 	public void updateNotice(NoticeVO vo)
 	{
-		String sql = "update notice set title=?, contents=?, where notice_index=?";
+		String sql = "update notice set title=?, contents=? where notice_index=?";
 		System.out.println("==>JDBC로 updateNotice() :"+sql);
 		try {
 			Context initContext = new InitialContext();
