@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>반려동물 헌혈 참여 - Blood 119</title>
 
 <%@include file="./common.jsp"%>
 	  <link href="./resource/css/product.css" rel="stylesheet">
@@ -15,11 +15,8 @@
           <div class="col-1 col-md-4 pt-1">
             <a class="text-muted" href="#"></a>
           </div>
-		  	  <div class="col-10 col-md-4 text-center" style="text-align:center;">
-	
-   </div> 
-
             <div class="col-1 col-md-4 d-flex justify-content-end align-items-center">  
+            <a class="btn btn-sm btn-outline-secondary" href="infopage.jsp"  style="margin:10px;">소개</a> 
             <%String id= (String)session.getAttribute("id");
             if(id==null){ %>
                 <a class="btn btn-sm btn-outline-secondary" href="login.jsp"  style="margin:30px;">Sign in</a>  
@@ -27,8 +24,8 @@
             	   %>  
             	    <a class="btn btn-sm btn-outline-secondary" href="logoutProc.jsp"  style="margin:30px;">Logout</a>  
             	    <%} %>
-          </div>
-        </div>
+          	</div>
+     </div>
  <header class=" py-3">
            <div class="p-3 p-md-5 ">
         <div class="col-12 px-0">
