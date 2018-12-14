@@ -68,7 +68,7 @@
             	<div class="col-md-6">
             	<input type="submit" name="btnSubmit" class="btnContact" value="수정" /></div>
             	<div class="col-md-6">
-		</div></div><br></td>
+		<a class="btn btnContact" href="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>"  role="button">삭제</a></div></div><br></td>
 			
 		<%} %>
 	</tr>
@@ -76,14 +76,6 @@
 </table>
 
 </form>
-<form action="deleteNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
-            	
-                        <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="삭제" />
-                        </div>
-                      
-				
-            	</form>
 </div>
 </body>
 </html>
