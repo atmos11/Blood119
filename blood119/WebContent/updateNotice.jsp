@@ -36,11 +36,12 @@
                 <img  src="./resource/img/LOGO.png" alt="rocket_contact"/>
             </div>
             <form action="updateNotice_proc.jsp?notice_index=<%=notice.getNotice_index()%>" method="post">
+             <h3>공지사항 수정</h3>
               <table class="table table-bordered">
   <tbody>
     <tr>
       <th scope="row">제목</th>
-      <td><input name="title" type="text" value=<%= notice.getTitle() %> /></td>
+      <td><input class="form-control" name="title" type="text" value=<%= notice.getTitle() %> /></td>
 
     </tr>
     <tr>

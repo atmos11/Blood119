@@ -25,6 +25,7 @@
                 <img  src="./resource/img/LOGO.png" alt="rocket_contact"/>
             </div>
             <form action="updateApply_proc.jsp?index=<%=vo.getApply_index()%>" method="post">
+             <h3>상태변경</h3>
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

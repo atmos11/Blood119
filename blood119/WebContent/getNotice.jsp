@@ -20,8 +20,6 @@
 
     <!-- Custom styles for this template -->
     <link href="./resource/resource/css/pricing.css" rel="stylesheet">
-	 <link href="./resource/css/navbar.css" rel="stylesheet">
-	  <link href="./resource/css/blog.css" rel="stylesheet">
 	<script src="./resource/js/script.js"></script>
 		  <link href="./resource/css/formcss.css" rel="stylesheet">
 </head>

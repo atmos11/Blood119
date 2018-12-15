@@ -61,8 +61,10 @@ case "Incheon": LOCATION = "인천";
          break;
 case "Ulsan": LOCATION = "울산";
 		 break;
-case "Sejong": LOCATION = "인천";
+case "Sejong": LOCATION = "세종";
 		 break;
+case "island": LOCATION = "제주,우리나라섬";
+break;
 default: LOCATION = "대한민국";
          break;
 }

@@ -46,6 +46,7 @@
 				  <option value="Incheon">인천광역시</option>
 				  <option value="Ulsan">울산광역시</option>
 				  <option value="Sejong">세종특별자치시</option>
+				  <option value="island">제주,울릉도,독도등 섬</option>
                           </select>
                         </div>
 						</div>
@@ -81,8 +82,8 @@
                         <div class="form-group">
 						 <select  class="form-control" id="gender" name="gender" required >
 						  <option value="">강아지성별</option>
-                  <option value="MAIL">남자</option>
-				  <option value="FEMAIL">여자</option>
+                  <option value="MALE">남자</option>
+				  <option value="FEMALE">여자</option>
                           </select>
                         </div>   
                     </div>
@@ -93,7 +94,7 @@
 						</div>
 						<div class="col-md-6">
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            <input type="submit" name="btnSubmit" class="btnContact" value="신청" />
                         </div>
 					
 					</div>

@@ -22,6 +22,7 @@
 	<script src="./resource/js/boostrap.min.js"></script>
 	<script src="./resource/js/jquery-1.12.3.js"></script>
 	<script src="./resource/js/script.js"></script>
+	
 </head>
 <body>
 <div class="container">
@@ -91,9 +92,8 @@
 				            else if(Id.equals("ADMIN")){%>
             				<form method="post" action="updateApply.jsp?apply_index=<%=board.getApply_index()%>">
 					    	<td colspan="2" align="center">
-					    	<div class="row">
-					    	<div class="col-md-6">
-					    	<input type="submit" name="btnSubmit" class="btnContact" value="상태 수정" /></div></form><%} %>
+					    	
+					    	<input type="submit" name="btnSubmit" class="btn btn-danger btn-sm" value="상태 수정" /></td></form><%} %>
 						</tr>
 						<% } %>
 						</tbody>

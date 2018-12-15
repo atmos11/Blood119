@@ -53,7 +53,7 @@ public class ApplyDAO {
 		String sql = "insert into apply(apply_index,apply_sort, apply_id, location, "
 				+ "ani_name, ani_type, ani_bloodtype, ani_gender, ani_age, result) values(?,?,?,?,?,?,?,?,?,?)";
 		System.out.println("==> JDBC로 insertApply() :"+sql);	
-
+		try {
 				conn = getConnection();
 				pstmt = conn.prepareStatement(sql);
 				pstmt = conn.prepareStatement(sql);
@@ -68,8 +68,12 @@ public class ApplyDAO {
 				pstmt.setInt(9, vo.getAni_age());
 				pstmt.setString(10,vo.getResult());
 				pstmt.executeUpdate();
-				pstmt.close();
-				conn.close();	}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+					}
 	public void updateApply(ApplyVO vo)
 	{
 		String sql = "update Apply set RESULT=? where APPLY_INDEX=?";
