@@ -22,7 +22,7 @@
  <header class=" py-3">
            <div class="p-3 p-md-5 ">
         <div class="col-12 px-0">
-          <img src="./resource/img/Big_Logo.png" class="rounded mx-auto d-block" style="width:30%;height:auto;">
+         <a href="./index.jsp"> <img src="./resource/img/Big_Logo.png" class="rounded mx-auto d-block" style="width:30%;height:auto;"> </a>
         </div>
       </div>
       </header>
