@@ -93,7 +93,7 @@
 					    	<td colspan="2" align="center">
 					    	<div class="row">
 					    	<div class="col-md-6">
-					    	<input type="submit" name="btnSubmit" class="btnContact" value="수정" /></div><%} %>
+					    	<input type="submit" name="btnSubmit" class="btnContact" value="상태 수정" /></div></form><%} %>
 						</tr>
 						<% } %>
 						</tbody>

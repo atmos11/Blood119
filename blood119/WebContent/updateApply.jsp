@@ -7,6 +7,7 @@
 	ApplyDAO applyDao = new ApplyDAO();
 	ApplyVO apply = applyDao.getApply(vo);
 	String apply_index = request.getParameter("apply_index");
+	System.out.println(apply_index);
 	vo.setApply_index(Integer.parseInt(apply_index));
 %>
 <!DOCTYPE html>
@@ -41,6 +42,7 @@
 					
 					</div>
             </form>
+            
 </div>
 </body>
 

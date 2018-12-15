@@ -171,7 +171,7 @@ public class ApplyDAO {
 	}
 	public List<ApplyVO> getApplyList(ApplyVO vo)
 	{
-		String sql = "select * from apply order by apply_date desc";
+		String sql = "select * from apply order by apply_index desc";
 		System.out.println("==>JDBC로 getBoardList(): "+sql);		
 		List<ApplyVO> boardList = new ArrayList<ApplyVO>();
 		
