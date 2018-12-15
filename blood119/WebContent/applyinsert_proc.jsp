@@ -22,7 +22,8 @@ String blood=request.getParameter("blood");
 String gender=request.getParameter("gender");
 int age=Integer.parseInt(request.getParameter("age")) ;
 ApplyVO vo = new ApplyVO();
-vo.setApply_id("USER1");
+String id=(String)session.getAttribute("id");
+vo.setApply_id(id);
 if(s.equals("give")){
 	sort="헌혈";
 
