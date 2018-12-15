@@ -76,6 +76,8 @@ int index=dao.getnowsel();
 vo.setApply_index(index);
 vo.setResult("WATTING");
 		dao.insertApply(vo);
+		String value="Form작성";
+		session.setAttribute("value",value);
 		response.sendRedirect("joinsuccess.jsp");
 	
 

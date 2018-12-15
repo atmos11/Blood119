@@ -24,7 +24,7 @@
           <img src="./resource/img/Big_Logo.png" class="rounded mx-auto d-block" style="width:50%;height:auto;">
         </div>
        <p>
-       <h5>회원가입이 완료 되었습니다. 다시로그인해주세요</h3>
+       <h5><%=session.getAttribute("value") %>이 완료 되었습니다. 다시로그인해주세요</h3>
        </p>
        <br>
         <p class="lead">
@@ -32,7 +32,13 @@
         </p>
         
     </div>
+<%
+session.removeAttribute("value");
 
+
+
+출처: http://hyeonstorage.tistory.com/125 [개발이 하고 싶어요]
+%>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
