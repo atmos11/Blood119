@@ -50,8 +50,8 @@ public class ApplyDAO {
 	 
 	public void insertApply(ApplyVO vo) throws SQLException {
 
-		String sql = "insert into apply(APPLY_INDEX,apply_sort, apply_id, location, "
-				+ "ani_name, ani_type, ani_bloodtype, ani_gender, ani_age, RESULT) values(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into apply(apply_index,apply_sort, apply_id, location, "
+				+ "ani_name, ani_type, ani_bloodtype, ani_gender, ani_age, result) values(?,?,?,?,?,?,?,?,?,?)";
 		System.out.println("==> JDBC로 insertApply() :"+sql);	
 
 				conn = getConnection();
@@ -70,11 +70,29 @@ public class ApplyDAO {
 				pstmt.executeUpdate();
 				pstmt.close();
 				conn.close();	}
-	
 	public void updateApply(ApplyVO vo)
 	{
+		String sql = "update Apply set RESULT=? where APPLY_INDEX=?";
+		System.out.println("==>JDBC로 updateApply() :"+sql);
+		try {
+			Context initContext = new InitialContext();
+			Context envContext  = (Context)initContext.lookup("java:/comp/env");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/board");
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getResult());
+			pstmt.setInt(2, vo.getApply_index());
+			rs = pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
+	/*public void updateApply(ApplyVO vo)
+	{
 		String sql = "update Apply set apply_sort=?, location=?, ani_name=?, "
-				+ "ani_type=?, ani_bloodtype=?, ani_gender=?, ani_age=?";
+				+ "ani_type=?, ani_bloodtype=?, ani_gender=?, ani_age=?, result=?";
 		System.out.println("==>JDBC로 updateApply() :"+sql);
 		try {
 			Context initContext = new InitialContext();
@@ -89,13 +107,14 @@ public class ApplyDAO {
 			pstmt.setString(5, vo.getAni_bloodtype());
 			pstmt.setString(6, vo.getAni_gender());
 			pstmt.setInt(7, vo.getAni_age());
+			pstmt.setString(8,vo.getResult());
 			rs = pstmt.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			JDBCUtil.close(conn, pstmt);
 		}
-	}
+	}*/
 	public void deleteApply(ApplyVO vo)
 	{
 		String sql = "delete from apply where apply_index=?";

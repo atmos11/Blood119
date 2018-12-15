@@ -1,12 +1,16 @@
 <%@ page import="java.util.List"%>
 <%@ page import="blood119.apply.dao.ApplyDAO"%>
 <%@ page import="blood119.apply.vo.ApplyVO"%>
+<%@ page import="blood119.user.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <% 
+    UserVO user = new UserVO();
 	ApplyVO vo = new ApplyVO();
 	ApplyDAO applyDao = new ApplyDAO();
 	List<ApplyVO> boardList = applyDao.getApplyList(vo);
+	String Id= (String)session.getAttribute("id"); 
+	System.out.println(Id);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,12 +52,12 @@
           </div>
         </div>
         <br>
-	
 			<div class="row">
 		<div class="col-md-12">
     	 <table class="table table-list-search">
     	 <thead>
                         <tr>
+                        <th>신청번호</th>
 						<th>분류</th>
 						<th>신청자</th>
 						<th>신청일</th>
@@ -69,6 +73,7 @@
 						<tbody>
 						<% for(ApplyVO board: boardList) { %>
 						<tr>
+						<td><%=board.getApply_index() %></td>
 						<td><%=board.getApply_sort() %></td>
 						<td><%=board.getApply_id()%></td>
 						<td><%=board.getApply_date() %></td>
@@ -79,6 +84,16 @@
 						<td><%=board.getAni_gender() %></td>
 						<td><%=board.getAni_age() %></td>
 						<td><%=board.getResult() %></td>
+						<% 
+				            if(Id==null){
+				            	Id="member";
+				            }
+				            else if(Id.equals("ADMIN")){%>
+            				<form method="post" action="updateApply.jsp?apply_index=<%=board.getApply_index()%>">
+					    	<td colspan="2" align="center">
+					    	<div class="row">
+					    	<div class="col-md-6">
+					    	<input type="submit" name="btnSubmit" class="btnContact" value="수정" /></div><%} %>
 						</tr>
 						<% } %>
 						</tbody>
